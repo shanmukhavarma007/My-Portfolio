@@ -41,7 +41,7 @@ export default function Contact() {
     if (!formData.name || !formData.email || !formData.message) return
     
     const mailtoLink = `mailto:22l31a04c8@gmail.com?subject=Portfolio Contact - ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`
-    window.location.href = mailtoLink
+    window.open(mailtoLink, '_blank')
     setIsSubmitted(true)
     setTimeout(() => setIsSubmitted(false), 3000)
   }

@@ -4,7 +4,7 @@ import { FiDownload } from 'react-icons/fi'
 export default function Resume() {
   const handleDownload = () => {
     const link = document.createElement('a')
-    link.href = '/assets/resume.pdf'
+    link.href = 'https://github.com/shanmukhavarma007/resume/raw/main/shanmukha_varma_resume.pdf'
     link.download = 'Shanmukha_Varma_Penmetsa_Resume.pdf'
     link.click()
   }

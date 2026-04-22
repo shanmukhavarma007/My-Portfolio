@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FiSun, FiMoon, FiMenu, FiX } from 'react-icons/fi'
+import { useTheme } from '../hooks/useTheme'
 
 const navLinks = [
   { name: 'Home', href: '#home' },
@@ -11,17 +12,9 @@ const navLinks = [
 ]
 
 export default function Header() {
-  const [isDark, setIsDark] = useState(true)
+  const { isDark, toggleTheme } = useTheme()
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme')
-    if (savedTheme === 'light') {
-      setIsDark(false)
-      document.body.classList.add('light')
-    }
-  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,12 +23,6 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  const toggleTheme = () => {
-    setIsDark(!isDark)
-    document.body.classList.toggle('light')
-    localStorage.setItem('theme', isDark ? 'light' : 'dark')
-  }
 
   return (
     <motion.header
