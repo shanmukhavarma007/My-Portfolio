@@ -1,21 +1,26 @@
 import { motion } from 'framer-motion'
-import { FiCode, FiTool, FiCpu } from 'react-icons/fi'
+import { FiCode, FiLink, FiCpu, FiTool } from 'react-icons/fi'
 
 const skillCategories = [
   {
-    title: 'Programming',
+    title: 'Core Development',
     icon: FiCode,
-    skills: ['Python', 'JavaScript', 'C'],
+    skills: ['Python', 'JavaScript', 'HTML', 'CSS'],
   },
   {
-    title: 'Tools',
-    icon: FiTool,
-    skills: ['Postman', 'Git', 'n8n'],
+    title: 'APIs & Backend',
+    icon: FiLink,
+    skills: ['REST APIs', 'API Integration', 'Webhooks'],
   },
   {
-    title: 'AI Tools',
+    title: 'AI & Automation',
     icon: FiCpu,
-    skills: ['OpenCode', 'Claude Code'],
+    skills: ['LLM API Integration', 'Prompt Engineering', 'AI Workflow Design'],
+  },
+  {
+    title: 'Automation Tools',
+    icon: FiTool,
+    skills: ['Zapier', 'Make', 'n8n'],
   },
 ]
 
@@ -31,7 +36,7 @@ export default function Skills() {
         <h2 className="section-title">Skills</h2>
       </motion.div>
 
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {skillCategories.map((category, catIndex) => (
           <motion.div
             key={category.title}

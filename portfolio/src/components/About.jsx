@@ -86,6 +86,21 @@ export default function About() {
           ))}
         </motion.div>
       </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.5 }}
+        className="mt-12 p-6 rounded-xl bg-[var(--color-bg-secondary)] border border-[var(--color-accent)]/30"
+      >
+        <h3 className="text-lg font-semibold font-[var(--font-outfit)] text-[var(--color-accent)] mb-2">
+          What I'm Building Now
+        </h3>
+        <p className="text-[var(--color-text-secondary)]">
+          Building AI automation systems combining LLM APIs, Zapier, and custom backend logic to solve real-world workflow problems.
+        </p>
+      </motion.div>
     </section>
   )
 }

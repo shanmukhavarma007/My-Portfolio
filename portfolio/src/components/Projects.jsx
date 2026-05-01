@@ -1,9 +1,24 @@
 import { motion } from 'framer-motion'
-import { FiExternalLink, FiGithub } from 'react-icons/fi'
+import { FiExternalLink, FiGithub, FiStar } from 'react-icons/fi'
 
 const MAIN_GITHUB = "https://github.com/shanmukhavarma007/"
 
 const projects = [
+  {
+    title: 'AI LeadFlow — Automated CRM',
+    description: 'End-to-end automated CRM system that captures, processes, and responds to leads using automation tools. Webhook-based lead capture with real-time response system.',
+    tech: ['Zapier', 'REST API', 'Webhook', 'Make'],
+    liveLink: 'https://github.com/shanmukhavarma007/Auto_CRM',
+    githubLink: 'https://github.com/shanmukhavarma007/Auto_CRM',
+    featured: true,
+  },
+  {
+    title: 'AI Customer Support Chatbot',
+    description: 'LLM-powered AI chatbot for handling user queries and automating responses with conversational flow handling.',
+    tech: ['LLM API', 'REST API', 'Node.js'],
+    liveLink: 'https://github.com/shanmukhavarma007/AI-Chat-bot',
+    githubLink: 'https://github.com/shanmukhavarma007/AI-Chat-bot',
+  },
   {
     title: 'REST API Project',
     description: 'A well-documented REST API built with Express.js featuring authentication, CRUD operations, and comprehensive error handling.',
@@ -65,8 +80,16 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="card group flex flex-col"
+            className={`card group flex flex-col ${project.featured ? 'border-[var(--color-accent)] ring-1 ring-[var(--color-accent)]/30' : ''}`}
           >
+            {project.featured && (
+              <div className="mb-3">
+                <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--color-accent)] bg-[var(--color-accent-glow)] px-3 py-1 rounded-full">
+                  <FiExternalLink className="w-3 h-3" />
+                  Featured Project
+                </span>
+              </div>
+            )}
             <div className="mb-4">
               <h3 className="text-xl font-semibold font-[var(--font-outfit)] mb-2 group-hover:text-[var(--color-accent)] transition-colors">
                 {project.title}

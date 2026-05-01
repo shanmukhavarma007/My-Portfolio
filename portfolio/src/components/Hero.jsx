@@ -49,8 +49,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-[var(--color-text-muted)] max-w-xl mx-auto mb-10"
         >
-          Building intelligent automation solutions with AI-first approach. 
-          Specializing in API integrations, workflow automation, and innovative web experiences.
+          Building AI-powered automation systems using APIs, LLMs, and no-code tools.
         </motion.p>
 
         <motion.div
